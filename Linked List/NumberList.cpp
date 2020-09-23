@@ -53,8 +53,59 @@ void link::addNode(double num)
 			newFind = newFind->next;
 		}
 
-
 		newFind->next = newNode;
+
+	}
+
+}
+
+void link::insertNode(double num)
+{
+
+	Node* newNode = nullptr;
+	Node* findNode = nullptr;
+	Node* previousNode = nullptr;
+
+	newNode = new Node;
+	newNode->element = num;
+	newNode->next = nullptr;
+
+	if (head == nullptr)
+		head = newNode;
+
+
+	//first initial findNode to head and look throught the node. 
+	else
+	{
+		findNode = head;
+
+		while ((findNode != nullptr) && (findNode->element < num))
+		{
+			previousNode = findNode;
+			findNode = findNode->next;
+		
+		}
+
+
+		if (previousNode == nullptr)
+		{
+			head = newNode;
+			
+			newNode->next = findNode;
+
+		}
+
+		else
+		{
+			previousNode->next = newNode;
+
+			newNode->next = findNode;
+
+
+		}
+
+
+
 
 
 	}
@@ -62,7 +113,29 @@ void link::addNode(double num)
 
 
 
+
 }
+
+void link::deleteNode(double num)
+{
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
 
 void link::displayAll()
 {
@@ -71,11 +144,11 @@ void link::displayAll()
 	Tracking = head;
 
 
-	while (Tracking->next != nullptr)
+	while (Tracking != nullptr)
 	{
 
 		cout << Tracking->element << endl;
-
+		
 		Tracking = Tracking->next;
 
 	}

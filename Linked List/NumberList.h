@@ -19,6 +19,8 @@ public:
 	link();
 	~link();
 	void addNode(double);
+	void deleteNode(double);
+	void insertNode(double);
 	void displayAll();
 
 };

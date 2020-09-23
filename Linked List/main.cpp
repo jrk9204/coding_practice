@@ -18,6 +18,9 @@ int main()
 
 	LK.addNode(25);
 
+	LK.insertNode(30);
+	
+	
 	LK.displayAll();
 
 
