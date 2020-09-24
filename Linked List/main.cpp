@@ -12,6 +12,8 @@ int main()
 	
 	LK.addNode(10);
 
+	LK.deleteNode(5);
+
 	LK.addNode(15);
 	
 	LK.addNode(20);

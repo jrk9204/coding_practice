@@ -105,27 +105,56 @@ void link::insertNode(double num)
 		}
 
 
-
-
-
 	}
-
-
-
 
 
 }
 
 void link::deleteNode(double num)
 {
+	Node* nodePtr = nullptr;
+	Node* previousNode = nullptr;
+
+	
+
+	if (head == nullptr)
+		return;
+
+	if (head->element == num)
+	{
+		nodePtr = head->next;
+		delete head;
+		head = nodePtr;
+	
+	}
+
+	else
+	{
+
+		nodePtr = head;
+
+
+		while (nodePtr != nullptr && nodePtr->element != num)
+		{
+			previousNode = nodePtr;
+		
+			nodePtr = nodePtr->next;
+
+		}
+
+		if (nodePtr != nullptr)
+		{
+			previousNode->next = nodePtr->next;
+			
+			delete nodePtr;
+
+		}
 
 
 
 
 
-
-
-
+	}
 
 
 
